@@ -1,5 +1,6 @@
 package com.dk.sudoku;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -49,29 +50,22 @@ public class MainActivity extends AppCompatActivity {
         errorMessage = (View) findViewById(R.id.error_message);
         errorMessage.setVisibility(View.GONE);
 
-        try {
+        givens = Sudoku.EASY_GIVENS;
 
-            givens = Sudoku.EASY_GIVENS;
-
-            switch(view.getId()) {
-                case R.id.button_EASY: givens = Sudoku.EASY_GIVENS;
-                    break;
-                case R.id.button_MEDIUM: givens= Sudoku.MEDIUM_GIVENS;
-                    break;
-                case R.id.button_HARD: givens=Sudoku.HARD_GIVENS;
-                    break;
-                case R.id.button_EXPERT: givens=Sudoku.EXPERT_GIVENS;
-                    break;
-            }
-
-            Sudoku sudoku = new Sudoku(getResources().openRawResource(R.raw.solution1), givens);
-            setContentView(R.layout.sudoku_grid);
-
+        switch(view.getId()) {
+            case R.id.button_EASY: givens = Sudoku.EASY_GIVENS;
+                break;
+            case R.id.button_MEDIUM: givens= Sudoku.MEDIUM_GIVENS;
+                break;
+            case R.id.button_HARD: givens=Sudoku.HARD_GIVENS;
+                break;
+            case R.id.button_EXPERT: givens=Sudoku.EXPERT_GIVENS;
+                break;
         }
-        catch(Exception e) {
-            setContentView(R.layout.activity_main);
-            errorMessage.setVisibility(View.VISIBLE);
-        }
+
+        Intent gameIntent = new Intent(getApplicationContext(), GameActivity.class);
+        gameIntent.putExtra("GIVENS", givens);
+        startActivity(gameIntent);
     }
 
 }

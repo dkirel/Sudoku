@@ -27,4 +27,36 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
+    <!-- Number buttons below Sudoku grid -->
+    <style name="NumberButton" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:onClick">updateGrid</item>
+        <item name="android:padding">1sp</item>
+        <item name="android:layout_margin">1sp</item>
+        <item name="android:background">@color/saddleBrown</item>
+        <item name="android:layout_marginTop">10sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="baseCellLayout">
+        <item name="android:padding">2sp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+<!--        <item name="stretchMode">columnWidth</item> -->
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="selectedLayout" parent="baseCellLayout">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="pencilLayout" parent="baseCellLayout">
+        <item name="android:textSize">10sp</item>
+    </style>
+
 </resources>
