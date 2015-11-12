@@ -115,6 +115,10 @@ public class GameActivity extends AppCompatActivity {
         //Update values
         game.setCell(positionSelected, buttonVal);
         gridViewAdapter.updateAdapter(positionSelected, viewSelected);
+
+        if (game.isLegal(true)) {
+            setContentView(R.layout.win_layout);
+        }
     }
 
 }

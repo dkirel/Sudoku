@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    tools:context="com.dk.sudoku.GameActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="5sp">
+
+        <ImageButton style="@style/NumberButton"
+            android:id="@+id/back_button"
+            android:src="@drawable/back_button"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:maxWidth="70sp"
+            android:maxHeight="70sp"
+            android:onClick="initMainActivity"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="WINNING!"
+            android:gravity="center"
+            android:textSize="50sp"
+            />
+
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>

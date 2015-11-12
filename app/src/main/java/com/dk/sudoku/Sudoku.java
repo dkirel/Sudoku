@@ -285,7 +285,7 @@ public class Sudoku {
     /*
      * Makes sure the current grid is legal
      */
-    private boolean isLegal(boolean completeCheck) {
+    public boolean isLegal(boolean completeCheck) {
 
         int i, j;
 
